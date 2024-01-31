@@ -1,3 +1,3 @@
 export function Planets() {
-  return <h1>PLANETS</h1>;
+  return <h2>PLANETS</h2>;
 }

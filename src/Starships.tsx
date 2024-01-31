@@ -1,3 +1,3 @@
 export function Starships() {
-  return <h1>STARSHIPS</h1>;
+  return <h2>STARSHIPS</h2>;
 }

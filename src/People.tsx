@@ -15,5 +15,5 @@ export function People() {
     getData();
   }, [peopleId]);
 
-  return <h1>PEOPLE</h1>;
+  return <h2>PEOPLE</h2>;
 }
