@@ -12,15 +12,15 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "people/:peopleId?",
+        path: "people/:id?",
         element: <People />,
       },
       {
-        path: "starships/:starshipId?",
+        path: "starships/:id?",
         element: <Starships />,
       },
       {
-        path: "planets/:planetId?",
+        path: "planets/:id?",
         element: <Planets />,
       },
     ],
