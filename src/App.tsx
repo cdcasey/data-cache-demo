@@ -1,3 +1,4 @@
+import { Link, Outlet } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -10,15 +11,17 @@ function App() {
               <a href={`/People/1`}>People</a>
             </li>
             <li>
-              <a href={`/Starships/2`}>Starships</a>
+              <Link to={`/Starships/2`}>Starships</Link>
             </li>
             <li>
-              <a href={`/Planets/2`}>Planets</a>
+              <Link to={`/Planets/2`}>Planets</Link>
             </li>
           </ul>
         </nav>
       </div>
-      <div id="detail"></div>
+      <div id="detail">
+        <Outlet />
+      </div>
     </>
   );
 }
