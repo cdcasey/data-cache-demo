@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from "react";
 // import ReactDOM from 'react-dom/client'
 import ReactDOM from "react-dom";
 import { RouterProvider } from "react-router-dom";
@@ -14,6 +14,8 @@ import "./index.css";
 // )
 
 ReactDOM.render(
-  <RouterProvider router={router} />,
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>,
   document.getElementById("root"),
 );
