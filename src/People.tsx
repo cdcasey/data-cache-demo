@@ -1,19 +1,17 @@
 import { useParams } from "react-router-dom";
-import { BASE_URL, PEOPLE_ENDPOINT } from "./urls.ts";
-import { useEffect } from "react";
+import { PEOPLE_ENDPOINT } from "./urls.ts";
+
+import { useData } from "./useData.ts";
 
 export function People() {
   const { peopleId } = useParams();
   console.log({ peopleId });
+  const { data, isLoading } = useData({
+    endpoint: PEOPLE_ENDPOINT,
+    id: peopleId,
+  });
 
-  useEffect(() => {
-    async function getData() {
-      const response = await fetch(BASE_URL + PEOPLE_ENDPOINT + peopleId);
-      const data = await response.json();
-      console.log({ data });
-    }
-    getData();
-  }, [peopleId]);
+  console.log({ data });
 
-  return <h2>PEOPLE</h2>;
+  return <h2>Person: {isLoading ? "LOADING..." : data?.name}</h2>;
 }
