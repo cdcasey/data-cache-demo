@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
-import "./App.css";
 import { useState } from "react";
+
+import "./App.css";
 
 function App() {
   const [endpointId, setEndpointId] = useState("0");
