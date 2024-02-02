@@ -3,11 +3,11 @@ import { fetchData } from './fetchData.ts';
 
 export function usePeople(endpoint, id) {
 	console.log(!!id && id !== '0');
-	const { data, isLoading, is } = useQuery({
+	const { data, isLoading } = useQuery({
 		queryKey: [endpoint, id],
 		queryFn: () => fetchData(endpoint, id),
-		enabled: false,
+		enabled: !!id && id !== '0',
 	});
-	console.log({ isLoading });
+
 	return { data, isLoading };
 }
