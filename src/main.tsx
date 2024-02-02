@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
 // import ReactDOM from 'react-dom/client'
-import ReactDOM from "react-dom";
-import { RouterProvider } from "react-router-dom";
+import ReactDOM from 'react-dom';
+import { RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import { router } from "./Routes.tsx";
+import { store } from './store/root.ts';
+import { router } from './Routes.tsx';
 // import App from "./App.tsx";
-import "./index.css";
+import './index.css';
 
 // ReactDOM.createRoot(document.getElementById('root')!).render(
 //   <React.StrictMode>
@@ -14,8 +16,10 @@ import "./index.css";
 // )
 
 ReactDOM.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-  document.getElementById("root"),
+	<React.StrictMode>
+		<Provider store={store}>
+			<RouterProvider router={router} />
+		</Provider>
+	</React.StrictMode>,
+	document.getElementById('root'),
 );
