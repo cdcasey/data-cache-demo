@@ -12,5 +12,5 @@ export function Planets() {
 		skip: !id || id === '0',
 	});
 	console.log({ data });
-	return <h2>Starship: {isLoading ? 'LOADING...' : data?.name}</h2>;
+	return <h2>Planet: {isLoading ? 'LOADING...' : data?.name}</h2>;
 }
