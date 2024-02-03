@@ -8,7 +8,9 @@ export function Planets() {
 	//   endpoint: PLANETS_ENDPOINT,
 	// });
 	const { id } = useParams();
-	const { data, isLoading } = useGetPlanetByIdQuery(id, { skip: id === '0' });
+	const { data, isLoading } = useGetPlanetByIdQuery(id, {
+		skip: !id || id === '0',
+	});
 	console.log({ data });
 	return <h2>Starship: {isLoading ? 'LOADING...' : data?.name}</h2>;
 }
