@@ -7,7 +7,9 @@ import { useParams } from 'react-router-dom';
 export function People() {
 	// const { data, isLoading } = useData({ endpoint: PEOPLE_ENDPOINT });
 	const { id } = useParams();
-	const { data, isLoading } = useGetPersonByIdQuery(id);
+	const { data, isLoading } = useGetPersonByIdQuery(id, {
+		skip: !id || id !== '0',
+	});
 
 	return <h2>Person: {isLoading ? 'LOADING...' : data?.name}</h2>;
 }
