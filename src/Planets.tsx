@@ -6,5 +6,5 @@ export function Planets() {
 		endpoint: PLANETS_ENDPOINT,
 	});
 
-	return <h2>Starship: {isLoading ? 'LOADING...' : data?.name}</h2>;
+	return <h2>Planets: {isLoading ? 'LOADING...' : data?.name}</h2>;
 }
