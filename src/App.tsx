@@ -21,27 +21,20 @@ function App() {
 							<NavLink to="/">Home</NavLink>
 						</li>
 						<li>
-							<NavLink to={`/People/${endpointId}`}>
-								People
-							</NavLink>
+							<NavLink to={`/People/${endpointId}`}>People</NavLink>
 						</li>
 						<li>
-							<NavLink to={`/Starships/${endpointId}`}>
-								Starships
-							</NavLink>
+							<NavLink to={`/Planets/${endpointId}`}>Planets</NavLink>
 						</li>
 						<li>
-							<NavLink to={`/Planets/${endpointId}`}>
-								Planets
-							</NavLink>
+							<NavLink to={`/Starships/${endpointId}`}>Starships</NavLink>
 						</li>
 					</ul>
 				</nav>
 				<div>
 					<button
 						style={{
-							backgroundColor:
-								endpointId === '1' ? 'lightgrey' : undefined,
+							backgroundColor: endpointId === '1' ? 'lightgrey' : undefined,
 						}}
 						onClick={() => handleButtonClick('1')}
 					>
@@ -49,8 +42,7 @@ function App() {
 					</button>
 					<button
 						style={{
-							backgroundColor:
-								endpointId === '2' ? 'lightgrey' : undefined,
+							backgroundColor: endpointId === '2' ? 'lightgrey' : undefined,
 						}}
 						onClick={() => handleButtonClick('2')}
 					>
@@ -58,8 +50,7 @@ function App() {
 					</button>
 					<button
 						style={{
-							backgroundColor:
-								endpointId === '3' ? 'lightgrey' : undefined,
+							backgroundColor: endpointId === '3' ? 'lightgrey' : undefined,
 						}}
 						onClick={() => handleButtonClick('3')}
 					>
@@ -67,8 +58,7 @@ function App() {
 					</button>
 					<button
 						style={{
-							backgroundColor:
-								endpointId === '4' ? 'lightgrey' : undefined,
+							backgroundColor: endpointId === '4' ? 'lightgrey' : undefined,
 						}}
 						onClick={() => handleButtonClick('4')}
 					>
