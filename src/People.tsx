@@ -1,5 +1,5 @@
-import { PEOPLE_ENDPOINT } from './urls.ts';
 import { useParams } from 'react-router-dom';
+import { PEOPLE_ENDPOINT } from './urls.ts';
 
 import { usePeople } from './hooks/usePeople.ts';
 
