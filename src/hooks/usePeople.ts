@@ -1,13 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchData } from './fetchData.ts';
-import People from '../People.ts';
 import { useMemo } from 'react';
+import People from '../People.ts';
+import { fetchData } from './fetchData.ts';
 
 export function usePeople(endpoint: string, id?: string) {
 	console.log(!!id && id !== '0');
 	const { data, isLoading } = useQuery<People>({
 		queryKey: [endpoint, id],
-		queryFn: () => fetchData(endpoint, id),
+		queryFn: () => fetchData(endpoint, id as string),
 		enabled: !!id && id !== '0',
 	});
 
