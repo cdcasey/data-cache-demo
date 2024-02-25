@@ -2,12 +2,11 @@ import { BASE_URL } from '../urls.ts';
 
 /**
  * Fetches data from an API endpoint.
- * @param {string} endpoint - The API endpoint to fetch data from.
- * @param {any} id - The ID of the resource to fetch.
- * @returns {Promise<any>} - The JSON data from the API response.
+ * Data returned is based on type passed to useQuery.
  * @throws {Error} - If the network response is not ok.
  */
-export const fetchData = async <T>(endpoint: string, id: string): Promise<T> => {
+
+export const fetchData = async <T>(endpoint: string, id: string) => {
 	const url = `${BASE_URL}${endpoint}/${id}`;
 	const response = await fetch(url);
 
@@ -16,5 +15,5 @@ export const fetchData = async <T>(endpoint: string, id: string): Promise<T> => 
 	}
 
 	console.log('FETCHING');
-	return response.json() as Promise<T>;
+	return (await response.json()) as Promise<T>;
 };
