@@ -7,7 +7,7 @@ import { BASE_URL } from '../urls.ts';
  * @returns {Promise<any>} - The JSON data from the API response.
  * @throws {Error} - If the network response is not ok.
  */
-export const fetchData = async (endpoint: string, id: any): Promise<any> => {
+export const fetchData = async <T>(endpoint: string, id: string): Promise<T> => {
 	const url = `${BASE_URL}${endpoint}/${id}`;
 	const response = await fetch(url);
 
@@ -16,5 +16,5 @@ export const fetchData = async (endpoint: string, id: any): Promise<any> => {
 	}
 
 	console.log('FETCHING');
-	return response.json();
+	return response.json() as Promise<T>;
 };
