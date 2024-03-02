@@ -7,19 +7,18 @@ export function useGetData({ endpoint }: { endpoint: string }) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [data, setData] = useState();
 	const { id } = useParams();
+	const URL = id ? BASE_URL + endpoint + '/' + id : BASE_URL + endpoint;
 
 	useEffect(() => {
 		async function getData() {
 			setIsLoading(true);
-			const response = await fetch(BASE_URL + endpoint + id);
+			const response = await fetch(URL);
 			const responseData = await response.json();
 			setData(responseData);
 			setIsLoading(false);
 		}
-		if (id && id !== '0') {
-			getData();
-		}
-	}, [endpoint, id]);
+		getData();
+	}, [URL]);
 
 	return { data, isLoading };
 }
